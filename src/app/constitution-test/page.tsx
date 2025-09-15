@@ -336,6 +336,8 @@ export default function ConstitutionTest() {
                 </select>
               </div>
 
+              {/* 出生信息 */}
+              <div className="bg-white rounded-xl p-4 shadow-sm space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     <Calendar className="inline w-4 h-4 mr-1" />
