@@ -2,14 +2,22 @@ import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { db } from '@/lib/supabase';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
-
 // POST /api/records/sleep - 创建或更新睡眠记录
 export async function POST(req: Request) {
   try {
+    // 检查环境变量
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || 
+        !(process.env.SUPABASE_SERVICE_ROLE || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)) {
+      return NextResponse.json(
+        { error: '缺少必要的环境变量配置' },
+        { status: 500 }
+      );
+    }
+
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.SUPABASE_SERVICE_ROLE || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
     const {
       date,
       duration,
@@ -104,6 +112,20 @@ export async function POST(req: Request) {
 // GET /api/records/sleep?date=2025-08-17 - 获取指定日期的睡眠记录
 export async function GET(req: Request) {
   try {
+    // 检查环境变量
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || 
+        !(process.env.SUPABASE_SERVICE_ROLE || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)) {
+      return NextResponse.json(
+        { error: '缺少必要的环境变量配置' },
+        { status: 500 }
+      );
+    }
+
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.SUPABASE_SERVICE_ROLE || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
+
     const { searchParams } = new URL(req.url);
     const date = searchParams.get('date');
 

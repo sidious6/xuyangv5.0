@@ -2,14 +2,22 @@ import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { db } from '@/lib/supabase';
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
-
 // POST /api/records/meal - 创建饮食记录
 export async function POST(req: Request) {
   try {
+    // 检查环境变量
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || 
+        !(process.env.SUPABASE_SERVICE_ROLE || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)) {
+      return NextResponse.json(
+        { error: '缺少必要的环境变量配置' },
+        { status: 500 }
+      );
+    }
+
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.SUPABASE_SERVICE_ROLE || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
     const {
       date,
       meal_type,
