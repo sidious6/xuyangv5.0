@@ -1,0 +1,862 @@
+{
+  "basic": {
+    "title": "中医体质测试 - 基础版",
+    "description": "10道题目，快速了解您的体质类型",
+    "questions": [
+      {
+        "id": "basic_1",
+        "question": "您的精力状况如何？",
+        "options": [
+          { "id": "A", "text": "精力充沛，活力十足", "type": "yang", "weight": 3 },
+          { "id": "B", "text": "精力一般，时有疲劳", "type": "balanced", "weight": 2 },
+          { "id": "C", "text": "容易疲劳，精力不足", "type": "yin", "weight": 3 }
+        ]
+      },
+      {
+        "id": "basic_2",
+        "question": "您的睡眠质量如何？",
+        "options": [
+          { "id": "A", "text": "睡眠深沉，精力恢复好", "type": "balanced", "weight": 3 },
+          { "id": "B", "text": "睡眠尚可，偶有失眠", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常失眠，睡眠浅", "type": "yin_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "basic_3",
+        "question": "您的食欲和消化情况？",
+        "options": [
+          { "id": "A", "text": "食欲正常，消化良好", "type": "balanced", "weight": 3 },
+          { "id": "B", "text": "食欲一般，偶有不适", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "食欲不振，消化不良", "type": "spleen_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "basic_4",
+        "question": "您容易感到怕冷还是怕热？",
+        "options": [
+          { "id": "A", "text": "怕冷，手脚发凉", "type": "yang_deficiency", "weight": 3 },
+          { "id": "B", "text": "冷热适中", "type": "balanced", "weight": 3 },
+          { "id": "C", "text": "怕热，容易出汗", "type": "yin_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "basic_5",
+        "question": "您的情绪状态如何？",
+        "options": [
+          { "id": "A", "text": "情绪稳定，心情平和", "type": "balanced", "weight": 3 },
+          { "id": "B", "text": "情绪波动，易焦虑", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "C", "text": "情绪低落，易抑郁", "type": "qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "basic_6",
+        "question": "您的皮肤状况如何？",
+        "options": [
+          { "id": "A", "text": "皮肤红润有光泽", "type": "balanced", "weight": 3 },
+          { "id": "B", "text": "皮肤干燥，易痒", "type": "blood_deficiency", "weight": 2 },
+          { "id": "C", "text": "面色苍白，易长斑", "type": "qi_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "basic_7",
+        "question": "您的排便情况？",
+        "options": [
+          { "id": "A", "text": "规律正常，成形", "type": "balanced", "weight": 3 },
+          { "id": "B", "text": "时干时稀，不规律", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常便秘或腹泻", "type": "spleen_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "basic_8",
+        "question": "您的耐力如何？",
+        "options": [
+          { "id": "A", "text": "耐力好，不易疲劳", "type": "balanced", "weight": 3 },
+          { "id": "B", "text": "耐力一般", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "耐力差，易疲劳", "type": "qi_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "basic_9",
+        "question": "您是否经常感到口干舌燥？",
+        "options": [
+          { "id": "A", "text": "很少口干", "type": "balanced", "weight": 3 },
+          { "id": "B", "text": "偶尔口干", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常口干舌燥", "type": "yin_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "basic_10",
+        "question": "您的记忆力如何？",
+        "options": [
+          { "id": "A", "text": "记忆力好", "type": "balanced", "weight": 3 },
+          { "id": "B", "text": "记忆力一般", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "记忆力差，易忘事", "type": "kidney_deficiency", "weight": 3 }
+        ]
+      }
+    ]
+  },
+  "professional": {
+    "title": "中医体质测试 - 专业版",
+    "description": "60道题目，全面分析您的体质状况",
+    "questions": [
+      {
+        "id": "prof_1",
+        "question": "您精力充沛吗？",
+        "options": [
+          { "id": "A", "text": "精力充沛，不易疲劳", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "精力一般，活动后易疲劳", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常感到疲劳乏力", "type": "qi_deficiency", "weight": 3 },
+          { "id": "D", "text": "严重疲劳，影响日常生活", "type": "severe_deficiency", "weight": 4 }
+        ]
+      },
+      {
+        "id": "prof_2",
+        "question": "您容易感到怕冷吗？",
+        "options": [
+          { "id": "A", "text": "不怕冷，耐寒", "type": "yang_excess", "weight": 1 },
+          { "id": "B", "text": "冷热适中", "type": "balanced", "weight": 1 },
+          { "id": "C", "text": "比较怕冷，手脚发凉", "type": "yang_deficiency", "weight": 2 },
+          { "id": "D", "text": "非常怕冷，四肢冰凉", "type": "severe_yang_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_3",
+        "question": "您容易感到怕热吗？",
+        "options": [
+          { "id": "A", "text": "不怕热，耐热", "type": "yin_excess", "weight": 1 },
+          { "id": "B", "text": "冷热适中", "type": "balanced", "weight": 1 },
+          { "id": "C", "text": "比较怕热，容易出汗", "type": "yin_deficiency", "weight": 2 },
+          { "id": "D", "text": "非常怕热，大汗淋漓", "type": "severe_yin_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_4",
+        "question": "您的睡眠质量如何？",
+        "options": [
+          { "id": "A", "text": "睡眠深沉，精力恢复好", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "睡眠尚可，偶有失眠", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常失眠，多梦易醒", "type": "yin_deficiency", "weight": 3 },
+          { "id": "D", "text": "严重失眠，难以入睡", "type": "severe_yin_deficiency", "weight": 4 }
+        ]
+      },
+      {
+        "id": "prof_5",
+        "question": "您的食欲如何？",
+        "options": [
+          { "id": "A", "text": "食欲很好", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "食欲一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "食欲不振", "type": "spleen_deficiency", "weight": 2 },
+          { "id": "D", "text": "完全没有食欲", "type": "severe_spleen_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_6",
+        "question": "您的消化功能如何？",
+        "options": [
+          { "id": "A", "text": "消化良好，无不适", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偶有消化不良", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常腹胀、消化不良", "type": "spleen_deficiency", "weight": 3 },
+          { "id": "D", "text": "严重消化不良，影响进食", "type": "severe_spleen_deficiency", "weight": 4 }
+        ]
+      },
+      {
+        "id": "prof_7",
+        "question": "您的排便情况？",
+        "options": [
+          { "id": "A", "text": "规律正常，成形", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "时干时稀", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常便秘", "type": "dryness", "weight": 2 },
+          { "id": "D", "text": "经常腹泻", "type": "spleen_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_8",
+        "question": "您的面色如何？",
+        "options": [
+          { "id": "A", "text": "面色红润有光泽", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "面色一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "面色苍白", "type": "blood_deficiency", "weight": 2 },
+          { "id": "D", "text": "面色晦暗", "type": "blood_stasis", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_9",
+        "question": "您容易头晕吗？",
+        "options": [
+          { "id": "A", "text": "很少头晕", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偶尔头晕", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常头晕", "type": "blood_deficiency", "weight": 3 },
+          { "id": "D", "text": "严重头晕，影响生活", "type": "severe_blood_deficiency", "weight": 4 }
+        ]
+      },
+      {
+        "id": "prof_10",
+        "question": "您的视力如何？",
+        "options": [
+          { "id": "A", "text": "视力很好", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "视力一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "视力模糊", "type": "liver_deficiency", "weight": 2 },
+          { "id": "D", "text": "视力严重下降", "type": "severe_liver_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_11",
+        "question": "您的听力如何？",
+        "options": [
+          { "id": "A", "text": "听力很好", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "听力一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "听力下降", "type": "kidney_deficiency", "weight": 2 },
+          { "id": "D", "text": "听力严重下降", "type": "severe_kidney_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_12",
+        "question": "您的头发状况如何？",
+        "options": [
+          { "id": "A", "text": "头发乌黑浓密", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "头发一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "头发干枯易断", "type": "blood_deficiency", "weight": 2 },
+          { "id": "D", "text": "脱发严重", "type": "kidney_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_13",
+        "question": "您容易出汗吗？",
+        "options": [
+          { "id": "A", "text": "正常出汗", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "不易出汗", "type": "exterior_deficiency", "weight": 2 },
+          { "id": "C", "text": "容易自汗（白天出汗）", "type": "qi_deficiency", "weight": 2 },
+          { "id": "D", "text": "容易盗汗（夜间出汗）", "type": "yin_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_14",
+        "question": "您的口渴程度如何？",
+        "options": [
+          { "id": "A", "text": "口渴适中", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "不常口渴", "type": "cold_syndrome", "weight": 2 },
+          { "id": "C", "text": "经常口渴", "type": "yin_deficiency", "weight": 2 },
+          { "id": "D", "text": "极度口渴", "type": "heat_syndrome", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_15",
+        "question": "您的口味偏好？",
+        "options": [
+          { "id": "A", "text": "口味正常", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偏嗜甜食", "type": "spleen_deficiency", "weight": 2 },
+          { "id": "C", "text": "偏嗜咸食", "type": "kidney_deficiency", "weight": 2 },
+          { "id": "D", "text": "偏嗜辛辣", "type": "liver_fire", "weight": 2 }
+        ]
+      },
+      {
+        "id": "prof_16",
+        "question": "您的情绪稳定吗？",
+        "options": [
+          { "id": "A", "text": "情绪稳定", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "情绪略有波动", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "易怒易焦虑", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "情绪极度不稳定", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_17",
+        "question": "您容易感到胸闷吗？",
+        "options": [
+          { "id": "A", "text": "很少胸闷", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偶尔胸闷", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常胸闷", "type": "qi_stagnation", "weight": 3 },
+          { "id": "D", "text": "严重胸闷，影响呼吸", "type": "severe_qi_stagnation", "weight": 4 }
+        ]
+      },
+      {
+        "id": "prof_18",
+        "question": "您的记忆力如何？",
+        "options": [
+          { "id": "A", "text": "记忆力很好", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "记忆力一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "记忆力下降", "type": "kidney_deficiency", "weight": 2 },
+          { "id": "D", "text": "记忆力严重衰退", "type": "severe_kidney_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_19",
+        "question": "您的注意力集中吗？",
+        "options": [
+          { "id": "A", "text": "注意力很集中", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "注意力一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "注意力不集中", "type": "spleen_deficiency", "weight": 2 },
+          { "id": "D", "text": "严重注意力不集中", "type": "severe_spleen_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_20",
+        "question": "您的耐寒能力如何？",
+        "options": [
+          { "id": "A", "text": "耐寒能力强", "type": "yang_excess", "weight": 1 },
+          { "id": "B", "text": "耐寒能力一般", "type": "balanced", "weight": 1 },
+          { "id": "C", "text": "比较怕冷", "type": "yang_deficiency", "weight": 2 },
+          { "id": "D", "text": "非常怕冷", "type": "severe_yang_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_21",
+        "question": "您的耐热能力如何？",
+        "options": [
+          { "id": "A", "text": "耐热能力强", "type": "yin_excess", "weight": 1 },
+          { "id": "B", "text": "耐热能力一般", "type": "balanced", "weight": 1 },
+          { "id": "C", "text": "比较怕热", "type": "yin_deficiency", "weight": 2 },
+          { "id": "D", "text": "非常怕热", "type": "severe_yin_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_22",
+        "question": "您的皮肤状况如何？",
+        "options": [
+          { "id": "A", "text": "皮肤红润有光泽", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "皮肤一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "皮肤干燥", "type": "blood_deficiency", "weight": 2 },
+          { "id": "D", "text": "皮肤粗糙易痒", "type": "blood_stasis", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_23",
+        "question": "您容易长痘痘吗？",
+        "options": [
+          { "id": "A", "text": "很少长痘痘", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偶尔长痘痘", "type": "mild_heat", "weight": 2 },
+          { "id": "C", "text": "经常长痘痘", "type": "heat_syndrome", "weight": 3 },
+          { "id": "D", "text": "严重痘痘问题", "type": "severe_heat_syndrome", "weight": 4 }
+        ]
+      },
+      {
+        "id": "prof_24",
+        "question": "您的嘴唇颜色？",
+        "options": [
+          { "id": "A", "text": "红润有光泽", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "颜色一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "偏白色", "type": "blood_deficiency", "weight": 2 },
+          { "id": "D", "text": "偏紫色", "type": "blood_stasis", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_25",
+        "question": "您的舌头颜色？",
+        "options": [
+          { "id": "A", "text": "淡红色", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偏淡白色", "type": "yang_deficiency", "weight": 2 },
+          { "id": "C", "text": "偏红色", "type": "heat_syndrome", "weight": 2 },
+          { "id": "D", "text": "暗紫色", "type": "blood_stasis", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_26",
+        "question": "您的舌苔情况？",
+        "options": [
+          { "id": "A", "text": "薄白苔", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "薄黄苔", "type": "mild_heat", "weight": 2 },
+          { "id": "C", "text": "厚白苔", "type": "dampness", "weight": 2 },
+          { "id": "D", "text": "厚黄苔", "type": "damp_heat", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_27",
+        "question": "您的月经情况（女性）？",
+        "options": [
+          { "id": "A", "text": "规律正常", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偶有痛经", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常痛经", "type": "blood_stasis", "weight": 3 },
+          { "id": "D", "text": "月经不调严重", "type": "severe_blood_stasis", "weight": 4 }
+        ]
+      },
+      {
+        "id": "prof_28",
+        "question": "您的腰酸情况？",
+        "options": [
+          { "id": "A", "text": "很少腰酸", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偶尔腰酸", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常腰酸", "type": "kidney_deficiency", "weight": 3 },
+          { "id": "D", "text": "严重腰酸", "type": "severe_kidney_deficiency", "weight": 4 }
+        ]
+      },
+      {
+        "id": "prof_29",
+        "question": "您的关节情况？",
+        "options": [
+          { "id": "A", "text": "关节灵活", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偶有关节不适", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "关节酸痛", "type": "wind_dampness", "weight": 3 },
+          { "id": "D", "text": "关节疼痛严重", "type": "severe_wind_dampness", "weight": 4 }
+        ]
+      },
+      {
+        "id": "prof_30",
+        "question": "您的体力情况？",
+        "options": [
+          { "id": "A", "text": "体力很好", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "体力一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "体力较差", "type": "qi_deficiency", "weight": 2 },
+          { "id": "D", "text": "体力很差", "type": "severe_qi_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_31",
+        "question": "您的声音情况？",
+        "options": [
+          { "id": "A", "text": "声音洪亮", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "声音一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "声音低沉", "type": "qi_deficiency", "weight": 2 },
+          { "id": "D", "text": "声音嘶哑", "type": "yin_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_32",
+        "question": "您的呼吸情况？",
+        "options": [
+          { "id": "A", "text": "呼吸顺畅", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偶有气短", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常气短", "type": "qi_deficiency", "weight": 3 },
+          { "id": "D", "text": "严重气短", "type": "severe_qi_deficiency", "weight": 4 }
+        ]
+      },
+      {
+        "id": "prof_33",
+        "question": "您的尿量情况？",
+        "options": [
+          { "id": "A", "text": "尿量正常", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "尿量偏多", "type": "kidney_deficiency", "weight": 2 },
+          { "id": "C", "text": "尿量偏少", "type": "heat_syndrome", "weight": 2 },
+          { "id": "D", "text": "夜尿频繁", "type": "kidney_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_34",
+        "question": "您的饮水习惯？",
+        "options": [
+          { "id": "A", "text": "饮水适量", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "不喜欢喝水", "type": "dampness", "weight": 2 },
+          { "id": "C", "text": "喜欢喝热水", "type": "yang_deficiency", "weight": 2 },
+          { "id": "D", "text": "喜欢喝冷水", "type": "heat_syndrome", "weight": 2 }
+        ]
+      },
+      {
+        "id": "prof_35",
+        "question": "您的运动习惯？",
+        "options": [
+          { "id": "A", "text": "经常运动", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偶尔运动", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "很少运动", "type": "qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "从不运动", "type": "severe_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_36",
+        "question": "您的饮食习惯？",
+        "options": [
+          { "id": "A", "text": "饮食规律", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "饮食不规律", "type": "mild_imbalance", "weight": 2 },
+          { "id": "C", "text": "经常暴饮暴食", "type": "spleen_stomach_imbalance", "weight": 3 },
+          { "id": "D", "text": "饮食无节制", "type": "severe_spleen_stomach_imbalance", "weight": 4 }
+        ]
+      },
+      {
+        "id": "prof_37",
+        "question": "您的睡眠时间？",
+        "options": [
+          { "id": "A", "text": "7-8小时", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "6-7小时", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "少于6小时", "type": "yin_deficiency", "weight": 2 },
+          { "id": "D", "text": "多于9小时", "type": "yang_deficiency", "weight": 2 }
+        ]
+      },
+      {
+        "id": "prof_38",
+        "question": "您的睡眠姿势？",
+        "options": [
+          { "id": "A", "text": "睡眠舒适", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "偶有不适", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "难以找到舒适姿势", "type": "qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "严重影响睡眠", "type": "severe_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_39",
+        "question": "您的晨起状态？",
+        "options": [
+          { "id": "A", "text": "精神饱满", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "略有疲惫", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "疲惫不堪", "type": "qi_deficiency", "weight": 2 },
+          { "id": "D", "text": "极度疲惫", "type": "severe_qi_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_40",
+        "question": "您的疲劳恢复速度？",
+        "options": [
+          { "id": "A", "text": "恢复很快", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "恢复一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "恢复较慢", "type": "qi_deficiency", "weight": 2 },
+          { "id": "D", "text": "很难恢复", "type": "severe_qi_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_41",
+        "question": "您的抗压能力？",
+        "options": [
+          { "id": "A", "text": "抗压能力强", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "抗压能力一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "容易受压", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "极易受压", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_42",
+        "question": "您的社交能力？",
+        "options": [
+          { "id": "A", "text": "社交活跃", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "社交一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "社交被动", "type": "qi_deficiency", "weight": 2 },
+          { "id": "D", "text": "社交回避", "type": "severe_qi_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_43",
+        "question": "您的情绪表达？",
+        "options": [
+          { "id": "A", "text": "表达自然", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "表达一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "表达不畅", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "压抑情感", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_44",
+        "question": "您的兴趣爱好？",
+        "options": [
+          { "id": "A", "text": "兴趣广泛", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "兴趣一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "兴趣较少", "type": "qi_deficiency", "weight": 2 },
+          { "id": "D", "text": "毫无兴趣", "type": "severe_qi_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_45",
+        "question": "您的适应能力？",
+        "options": [
+          { "id": "A", "text": "适应力强", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "适应力一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "适应较慢", "type": "spleen_deficiency", "weight": 2 },
+          { "id": "D", "text": "难以适应", "type": "severe_spleen_deficiency", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_46",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_47",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_48",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_49",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_50",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_51",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_52",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_53",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_54",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_55",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_56",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_57",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_58",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_59",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      },
+      {
+        "id": "prof_60",
+        "question": "您的家庭关系？",
+        "options": [
+          { "id": "A", "text": "关系和谐", "type": "balanced", "weight": 1 },
+          { "id": "B", "text": "关系一般", "type": "mild_imbalance", "weight": 1 },
+          { "id": "C", "text": "关系紧张", "type": "liver_qi_stagnation", "weight": 2 },
+          { "id": "D", "text": "关系恶劣", "type": "severe_liver_qi_stagnation", "weight": 3 }
+        ]
+      }
+    ]
+  },
+  "constitution_types": {
+    "balanced": {
+      "name": "平和质",
+      "description": "阴阳平衡，身体健康",
+      "characteristics": [
+        "精力充沛",
+        "情绪稳定",
+        "睡眠良好",
+        "食欲正常",
+        "面色红润",
+        "抵抗力强"
+      ],
+      "recommendations": [
+        "保持良好的生活习惯",
+        "均衡饮食",
+        "适度运动",
+        "保持心情愉快"
+      ]
+    },
+    "qi_deficiency": {
+      "name": "气虚质",
+      "description": "元气不足，以疲乏、气短、自汗等为主要特征",
+      "characteristics": [
+        "容易疲劳",
+        "声音低弱",
+        "容易出汗",
+        "气短懒言",
+        "舌淡苔白",
+        "脉虚弱"
+      ],
+      "recommendations": [
+        "补气健脾",
+        "适量运动",
+        "规律作息",
+        "饮食清淡"
+      ]
+    },
+    "yang_deficiency": {
+      "name": "阳虚质",
+      "description": "阳气不足，以畏寒怕冷、手足不温等为主要特征",
+      "characteristics": [
+        "怕冷",
+        "手脚发凉",
+        "喜热饮",
+        "精神不振",
+        "舌淡胖嫩",
+        "脉沉迟"
+      ],
+      "recommendations": [
+        "温补阳气",
+        "避免寒凉",
+        "适度运动",
+        "保暖"
+      ]
+    },
+    "yin_deficiency": {
+      "name": "阴虚质",
+      "description": "阴液亏少，以口燥咽干、手足心热等为主要特征",
+      "characteristics": [
+        "怕热",
+        "手足心热",
+        "口干咽燥",
+        "盗汗",
+        "舌红少苔",
+        "脉细数"
+      ],
+      "recommendations": [
+        "滋阴降火",
+        "避免辛辣",
+        "充足睡眠",
+        "保持心情舒畅"
+      ]
+    },
+    "phlegm_dampness": {
+      "name": "痰湿质",
+      "description": "水液内停，痰湿凝聚，以形体肥胖、腹部肥满为主要特征",
+      "characteristics": [
+        "体型肥胖",
+        "腹部肥满",
+        "胸闷痰多",
+        "舌苔白腻",
+        "脉滑"
+      ],
+      "recommendations": [
+        "化痰利湿",
+        "控制饮食",
+        "加强运动",
+        "避免肥甘厚味"
+      ]
+    },
+    "damp_heat": {
+      "name": "湿热质",
+      "description": "湿热内蕴，以面垢油光、口苦、苔黄腻等为主要特征",
+      "characteristics": [
+        "面垢油光",
+        "口苦口干",
+        "身重困倦",
+        "大便黏滞",
+        "舌红苔黄腻",
+        "脉滑数"
+      ],
+      "recommendations": [
+        "清热利湿",
+        "饮食清淡",
+        "保持清洁",
+        "避免辛辣刺激"
+      ]
+    },
+    "blood_stasis": {
+      "name": "血瘀质",
+      "description": "血脉不畅，以肤色晦暗、舌质紫暗等为主要特征",
+      "characteristics": [
+        "肤色晦暗",
+        "舌质紫暗",
+        "唇色暗紫",
+        "脉涩"
+      ],
+      "recommendations": [
+        "活血化瘀",
+        "适量运动",
+        "保持心情舒畅",
+        "避免寒凉"
+      ]
+    },
+    "qi_stagnation": {
+      "name": "气郁质",
+      "description": "气机郁滞，以神情抑郁、忧虑脆弱等为主要特征",
+      "characteristics": [
+        "情绪抑郁",
+        "多愁善感",
+        "胸闷",
+        "肋胀",
+        "脉弦"
+      ],
+      "recommendations": [
+        "疏肝解郁",
+        "调节情绪",
+        "适当运动",
+        "保持社交"
+      ]
+    },
+    "special_constitution": {
+      "name": "特禀质",
+      "description": "先天禀赋不足，以生理缺陷、过敏反应等为主要特征",
+      "characteristics": [
+        "容易过敏",
+        "遗传性疾病",
+        "生理缺陷",
+        "适应能力差"
+      ],
+      "recommendations": [
+        "增强体质",
+        "避免过敏原",
+        "提高免疫力",
+        "保持心情愉快"
+      ]
+    }
+  }
+}
