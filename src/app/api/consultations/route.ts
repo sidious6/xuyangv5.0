@@ -11,10 +11,17 @@ if (!supabaseUrl || !supabaseServiceKey) {
   });
 }
 
-const supabase = createClient(supabaseUrl!, supabaseServiceKey!);
-
 export async function POST(request: NextRequest) {
   try {
+    // 检查环境变量
+    if (!supabaseUrl || !supabaseServiceKey) {
+      return NextResponse.json(
+        { error: '缺少必要的环境变量配置' },
+        { status: 500 }
+      );
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
     console.log('Received consultation save request');
     const body = await request.json();
     console.log('Request body:', body);
