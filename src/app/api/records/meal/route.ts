@@ -87,6 +87,20 @@ export async function POST(req: Request) {
 // GET /api/records/meal?date=2025-08-17 - 获取指定日期的饮食记录
 export async function GET(req: Request) {
   try {
+    // 检查环境变量
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || 
+        !(process.env.SUPABASE_SERVICE_ROLE || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)) {
+      return NextResponse.json(
+        { error: '缺少必要的环境变量配置' },
+        { status: 500 }
+      );
+    }
+
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL,
+      process.env.SUPABASE_SERVICE_ROLE || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    );
+
     const { searchParams } = new URL(req.url);
     const date = searchParams.get('date');
 
