@@ -29,7 +29,7 @@ const ShareCard: React.FC<ShareCardProps> = ({
       {/* 顶部标题区域 */}
       <div className="relative z-10 text-center mb-4">
         <div className="text-xs text-gray-500 mb-1">@{userName}的今日养生</div>
-        <div className="text-base font-semibold text-gray-800 mb-2">"{title}"</div>
+        <div className="text-base font-semibold text-gray-800 mb-2">&ldquo;{title}&rdquo;</div>
         
         {/* 养生图标区域 - 缩小 */}
         <div className="mx-auto w-16 h-16 bg-gradient-to-b from-green-200 to-green-400 rounded-full shadow-md mb-2 relative overflow-hidden flex items-center justify-center">
