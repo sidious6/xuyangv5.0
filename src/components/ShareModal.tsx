@@ -88,7 +88,7 @@ const ShareModal: React.FC<ShareModalProps> = ({ isOpen, onClose, shareData }) =
     
     try {
       const canvas = await html2canvas(cardRef.current, {
-        backgroundColor: 'transparent',
+        background: 'transparent',
         scale: 2,
         useCORS: true,
         allowTaint: true,
