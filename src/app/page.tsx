@@ -1521,20 +1521,46 @@ export default function Home() {
 
     try {
       setIsLoading(true);
+      console.log('开始上传饮食图片', file.name, file.size, file.type);
       
-      // 上传图片到Supabase Storage
-      const { supabase } = await import('@/lib/supabase');
+      // 尝试直接上传，如果失败则使用签名URL方式
+      const { supabase, storage } = await import('@/lib/supabase');
       const fileExt = file.name.split('.').pop();
-      const fileName = `${user.id}/${Date.now()}.${fileExt}`;
+      const fileName = `${user.id}/meals/${Date.now()}.${fileExt}`;
       
-      const { data, error } = await supabase.storage
+      console.log('上传路径:', fileName);
+
+      // 方式1：尝试直接上传
+      let { data, error } = await supabase.storage
         .from('user-media')
         .upload(fileName, file);
 
       if (error) {
-        console.error('Upload error:', error);
-        alert('图片上传失败，请重试');
-        return;
+        console.log('直接上传失败，尝试签名URL方式:', error.message);
+        
+        // 方式2：使用签名URL上传
+        const signedResult = await storage.getSignedUploadUrl(fileName, file.type || 'image/jpeg');
+        if (signedResult.error) {
+          console.error('获取签名URL失败:', signedResult.error);
+          throw new Error(`上传失败: ${signedResult.error.message}`);
+        }
+
+        // 使用签名URL上传
+        const putResp = await fetch(signedResult.data.signedUrl, {
+          method: 'PUT',
+          body: file,
+          headers: { 'content-type': file.type || 'image/jpeg' }
+        });
+
+        if (!putResp.ok) {
+          const errorText = await putResp.text();
+          console.error('签名URL上传失败:', putResp.status, putResp.statusText, errorText);
+          throw new Error(`上传失败: ${putResp.status} ${putResp.statusText}`);
+        }
+
+        console.log('签名URL上传成功');
+      } else {
+        console.log('直接上传成功');
       }
 
       // 获取公共URL
@@ -1545,10 +1571,12 @@ export default function Home() {
       if (publicData?.publicUrl) {
         setFoodImages(prev => [...prev, publicData.publicUrl]);
         alert('图片上传成功！');
+        console.log('图片URL:', publicData.publicUrl);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error uploading image:', error);
-      alert('图片上传失败，请重试');
+      const errorMessage = error?.message || '未知错误';
+      alert(`图片上传失败：${errorMessage}`);
     } finally {
       setIsLoading(false);
     }
