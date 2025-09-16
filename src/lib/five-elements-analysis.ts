@@ -145,9 +145,9 @@ export function getFiveElementsAdvice(element: 'wood' | 'fire' | 'earth' | 'meta
         ],
         exercise: [
           '木行平衡时：',
-          '• 头发乌黑发亮、指甲光滑有月牙',
-          '• 情绪舒展，遇事能快速"翻篇"，决策力强',
-          '• 晨起口苦消失，眼睛不干涩'
+          '头发乌黑发亮、指甲光滑有月牙',
+          '情绪舒展，遇事能快速"翻篇"，决策力强',
+          '晨起口苦消失，眼睛不干涩'
         ],
         lifestyle: [
           '木行失衡信号：',

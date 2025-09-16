@@ -418,7 +418,7 @@ export default function ShunshiPage() {
       </div>
 
         {/* 内容区域 */}
-        <div className="flex-1 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 140px)' }}>
+        <div className="flex-1 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 260px)' }}>
         {loading ? (
           <div className="flex items-center justify-center py-12">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900"></div>
