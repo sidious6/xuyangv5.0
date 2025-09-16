@@ -172,9 +172,9 @@ export function getFiveElementsAdvice(element: 'wood' | 'fire' | 'earth' | 'meta
         ],
         exercise: [
           '火行平衡时：',
-          '• 面色透亮有光泽，舌色淡红均匀',
-          '• 睡眠深稳，晨起精神饱满',
-          '• 思维敏捷，人际互动热情适度'
+          '面色透亮有光泽，舌色淡红均匀',
+          '睡眠深稳，晨起精神饱满',
+          '思维敏捷，人际互动热情适度'
         ],
         lifestyle: [
           '火行失衡信号：',
@@ -199,9 +199,9 @@ export function getFiveElementsAdvice(element: 'wood' | 'fire' | 'earth' | 'meta
         ],
         exercise: [
           '土行平衡时：',
-          '• 食欲正常，吃生冷不腹泻',
-          '• 肌肉紧实有力，唇色淡红润泽',
-          '• 情绪稳定，不轻易"杞人忧天"'
+          '食欲正常，吃生冷不腹泻',
+          '肌肉紧实有力，唇色淡红润泽',
+          '情绪稳定，不轻易"杞人忧天"'
         ],
         lifestyle: [
           '土行失衡信号：',
@@ -226,9 +226,9 @@ export function getFiveElementsAdvice(element: 'wood' | 'fire' | 'earth' | 'meta
         ],
         exercise: [
           '金行平衡时：',
-          '• 呼吸深长均匀，换季不咳嗽、喉咙清爽',
-          '• 皮肤细腻有光泽，大便规律成型',
-          '• 情绪通透，能理性处理"告别"类场景'
+          '呼吸深长均匀，换季不咳嗽、喉咙清爽',
+          '皮肤细腻有光泽，大便规律成型',
+          '情绪通透，能理性处理"告别"类场景'
         ],
         lifestyle: [
           '金行失衡信号：',
@@ -253,9 +253,9 @@ export function getFiveElementsAdvice(element: 'wood' | 'fire' | 'earth' | 'meta
         ],
         exercise: [
           '水行平衡时：',
-          '• 头发浓密有弹性',
-          '• 夜尿少、腰膝有力，冬季手脚温暖',
-          '• 专注力强，遇事沉稳不慌'
+          '头发浓密有弹性',
+          '夜尿少、腰膝有力，冬季手脚温暖',
+          '专注力强，遇事沉稳不慌'
         ],
         lifestyle: [
           '水行失衡信号：',
