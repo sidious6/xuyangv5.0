@@ -33,7 +33,7 @@ interface ConstitutionData {
   };
 }
 
-type Step = 'check' | 'birth_info' | 'constitution_test' | 'complete';
+type Step = 'check' | 'birth_info' | 'test_type' | 'constitution_test' | 'complete';
 
 export default function CompleteProfilePage() {
   const { user } = useAuth();
@@ -58,6 +58,10 @@ export default function CompleteProfilePage() {
     gender: null,
     constitution_answers: {}
   });
+
+  // 体质测试类型选择
+  const [constitutionTestType, setConstitutionTestType] = useState<'basic' | 'professional' | null>(null);
+  const [professionalQuestions, setProfessionalQuestions] = useState<any[] | null>(null);
 
   const [constitutionData, setConstitutionData] = useState<ConstitutionData | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -206,6 +210,25 @@ export default function CompleteProfilePage() {
         .eq('id', user.id);
 
       if (error) throw error;
+
+      // 同步调用服务端API计算并保存五行比例
+      try {
+        await fetch('/api/profile/birth-info', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userId: user.id,
+            birthYear: data.birth_year,
+            birthMonth: data.birth_month,
+            birthDay: data.birth_day,
+            birthHour: data.birth_hour,
+            gender: data.gender
+          })
+        });
+      } catch (e) {
+        console.error('计算并保存五行比例失败:', e);
+        // 不中断流程
+      }
     } catch (error) {
       console.error('Error saving birth info:', error);
       throw new Error('保存生辰信息失败');

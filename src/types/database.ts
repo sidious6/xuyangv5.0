@@ -12,6 +12,20 @@ export interface Profile {
   birth_day?: number;
   birth_hour?: number;
   gender?: 'male' | 'female';
+  // 五行比例
+  five_elements_ratio?: {
+    木: number;
+    火: number;
+    土: number;
+    金: number;
+    水: number;
+  };
+  // 日干信息
+  day_master?: string;        // 日干，如：甲、乙、丙、丁、戊、己、庚、辛、壬、癸
+  day_master_element?: string; // 日干对应的五行，如：wood、fire、earth、metal、water
+  // 体质测试相关
+  constitution_test_type?: string;  // 测试版本类型
+  constitution_scores_json?: Record<string, number>; // 体质维度转化分
   created_at: string;
   updated_at: string;
 }

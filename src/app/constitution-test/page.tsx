@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { Calendar, Clock, User, ArrowRight, ArrowLeft } from 'lucide-react';
 import { createClient } from '@supabase/supabase-js';
@@ -37,6 +37,11 @@ interface TestResult {
 export default function ConstitutionTest() {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState<Step>('basic');
+  
+  // 重定向到引导页面的测试选择步骤
+  useEffect(() => {
+    router.push('/auth/onboarding?step=2');
+  }, [router]);
   const [basicInfo, setBasicInfo] = useState<BasicInfo>({
     name: '',
     birthYear: 1990,
@@ -133,11 +138,49 @@ export default function ConstitutionTest() {
     }
   ];
 
-  const handleBasicInfoSubmit = () => {
+  const handleBasicInfoSubmit = async () => {
     if (!basicInfo.name) {
       alert('请输入姓名');
       return;
     }
+
+    // 保存生日信息并计算五行比例
+    try {
+      setIsLoading(true);
+      const { data: { session } } = await supabase.auth.getSession();
+      if (session?.user) {
+        const response = await fetch('/api/profile/birth-info', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            userId: session.user.id,
+            birthYear: basicInfo.birthYear,
+            birthMonth: basicInfo.birthMonth,
+            birthDay: basicInfo.birthDay,
+            birthHour: basicInfo.birthHour,
+            gender: basicInfo.gender,
+            name: basicInfo.name
+          })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          console.log('生日信息和五行比例保存成功:', result.data);
+          // 可以在这里显示一个成功提示
+        } else {
+          console.error('保存生日信息失败:', result.error);
+          // 不阻塞用户继续操作，只记录错误
+        }
+      }
+    } catch (error) {
+      console.error('保存生日信息请求失败:', error);
+      // 不阻塞用户继续操作，只记录错误
+    } finally {
+      setIsLoading(false);
+    }
+
     setCurrentStep('questionnaire');
   };
 
@@ -191,6 +234,7 @@ export default function ConstitutionTest() {
       try {
         const { data: { session } } = await supabase.auth.getSession();
         if (session?.user) {
+          // 保存体质测试结果
           await fetch('/api/constitution-test', {
             method: 'POST',
             headers: {
@@ -203,6 +247,32 @@ export default function ConstitutionTest() {
               baziAnalysis: baziData.data
             })
           });
+
+          // 计算并保存五行比例到用户档案
+          try {
+            const fiveElementsResponse = await fetch('/api/five-elements-ratio', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                userId: session.user.id,
+                birthYear: basicInfo.birthYear,
+                birthMonth: basicInfo.birthMonth,
+                birthDay: basicInfo.birthDay,
+                birthHour: basicInfo.birthHour
+              })
+            });
+
+            const fiveElementsResult = await fiveElementsResponse.json();
+            if (fiveElementsResult.success) {
+              console.log('五行比例计算并保存成功:', fiveElementsResult.data.fiveElementsRatio);
+            } else {
+              console.error('五行比例计算失败:', fiveElementsResult.error);
+            }
+          } catch (fiveElementsError) {
+            console.error('五行比例计算请求失败:', fiveElementsError);
+          }
         }
       } catch (saveError) {
         console.error('保存测试结果失败:', saveError);
@@ -394,10 +464,11 @@ export default function ConstitutionTest() {
               <div className="flex justify-end">
                 <button
                   onClick={handleBasicInfoSubmit}
-                  className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+                  disabled={isLoading}
+                  className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  开始测试
-                  <ArrowRight className="inline w-4 h-4 ml-2" />
+                  {isLoading ? '保存中...' : '开始测试'}
+                  {!isLoading && <ArrowRight className="inline w-4 h-4 ml-2" />}
                 </button>
               </div>
             </div>

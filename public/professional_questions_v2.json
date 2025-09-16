@@ -1,0 +1,1811 @@
+[
+  {
+    "id": 1,
+    "question": "您精力充沛吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "平和质"
+  },
+  {
+    "id": 2,
+    "question": "您容易疲乏吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 5
+      },
+      {
+        "text": "有一点",
+        "score": 4
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 2
+      },
+      {
+        "text": "非常",
+        "score": 1
+      }
+    ],
+    "dimension": "平和质"
+  },
+  {
+    "id": 3,
+    "question": "您说话低弱无力吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 5
+      },
+      {
+        "text": "有一点",
+        "score": 4
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 2
+      },
+      {
+        "text": "非常",
+        "score": 1
+      }
+    ],
+    "dimension": "平和质"
+  },
+  {
+    "id": 4,
+    "question": "您感到闷闷不乐、情绪低沉吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 5
+      },
+      {
+        "text": "有一点",
+        "score": 4
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 2
+      },
+      {
+        "text": "非常",
+        "score": 1
+      }
+    ],
+    "dimension": "平和质"
+  },
+  {
+    "id": 5,
+    "question": "您比一般人耐受不了寒冷吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 5
+      },
+      {
+        "text": "有一点",
+        "score": 4
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 2
+      },
+      {
+        "text": "非常",
+        "score": 1
+      }
+    ],
+    "dimension": "平和质"
+  },
+  {
+    "id": 6,
+    "question": "您能适应外界环境和社会环境的变化吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "平和质"
+  },
+  {
+    "id": 7,
+    "question": "您容易失眠吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 5
+      },
+      {
+        "text": "有一点",
+        "score": 4
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 2
+      },
+      {
+        "text": "非常",
+        "score": 1
+      }
+    ],
+    "dimension": "平和质"
+  },
+  {
+    "id": 8,
+    "question": "您容易忘事吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 5
+      },
+      {
+        "text": "有一点",
+        "score": 4
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 2
+      },
+      {
+        "text": "非常",
+        "score": 1
+      }
+    ],
+    "dimension": "平和质"
+  },
+  {
+    "id": 9,
+    "question": "您容易疲乏吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气虚质"
+  },
+  {
+    "id": 10,
+    "question": "您容易气短（呼吸短促，接不上气）吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气虚质"
+  },
+  {
+    "id": 11,
+    "question": "您容易心慌吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气虚质"
+  },
+  {
+    "id": 12,
+    "question": "您容易头晕或站起来眩晕吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气虚质"
+  },
+  {
+    "id": 13,
+    "question": "您比别人容易患感冒吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气虚质"
+  },
+  {
+    "id": 14,
+    "question": "您喜欢安静、懒得说话吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气虚质"
+  },
+  {
+    "id": 15,
+    "question": "您说话声音低弱无力吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气虚质"
+  },
+  {
+    "id": 16,
+    "question": "您活动量稍大就容易出虚汗吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气虚质"
+  },
+  {
+    "id": 17,
+    "question": "您手脚发凉吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阳虚质"
+  },
+  {
+    "id": 18,
+    "question": "您胃脘部、背部或腰膝部怕冷吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阳虚质"
+  },
+  {
+    "id": 19,
+    "question": "您感到怕冷，衣服比别人穿的多吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阳虚质"
+  },
+  {
+    "id": 20,
+    "question": "您比一般人耐受不了寒冷吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阳虚质"
+  },
+  {
+    "id": 21,
+    "question": "您比别人容易患感冒吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阳虚质"
+  },
+  {
+    "id": 22,
+    "question": "您吃喝凉东西会感到不舒服或怕吃喝冷东西吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阳虚质"
+  },
+  {
+    "id": 23,
+    "question": "您受凉或吃喝凉东西后，容易腹泻吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阳虚质"
+  },
+  {
+    "id": 24,
+    "question": "您感到手脚心发热吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阴虚质"
+  },
+  {
+    "id": 25,
+    "question": "您感到身体、脸上发热吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阴虚质"
+  },
+  {
+    "id": 26,
+    "question": "您皮肤或口唇干吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阴虚质"
+  },
+  {
+    "id": 27,
+    "question": "您口唇颜色比一般人红吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阴虚质"
+  },
+  {
+    "id": 28,
+    "question": "您容易便秘或大便干燥吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阴虚质"
+  },
+  {
+    "id": 29,
+    "question": "您面部两颊潮红或偏红吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阴虚质"
+  },
+  {
+    "id": 30,
+    "question": "您感到眼睛干涩吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阴虚质"
+  },
+  {
+    "id": 31,
+    "question": "您感到口干咽燥、总想喝水吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "阴虚质"
+  },
+  {
+    "id": 32,
+    "question": "您感到胸闷或腹部胀满吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "痰湿质"
+  },
+  {
+    "id": 33,
+    "question": "您感到身体沉重不放松或不爽快吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "痰湿质"
+  },
+  {
+    "id": 34,
+    "question": "您腹部肥满松软？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "痰湿质"
+  },
+  {
+    "id": 35,
+    "question": "您额部油脂分泌过多吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "痰湿质"
+  },
+  {
+    "id": 36,
+    "question": "您上眼睑比别人肿吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "痰湿质"
+  },
+  {
+    "id": 37,
+    "question": "您嘴里有黏黏的感觉吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "痰湿质"
+  },
+  {
+    "id": 38,
+    "question": "您平时痰多，特别是咽喉部总感到有痰堵吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "痰湿质"
+  },
+  {
+    "id": 39,
+    "question": "您舌苔厚腻或有舌苔厚厚的感觉吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "痰湿质"
+  },
+  {
+    "id": 40,
+    "question": "您面部或鼻部有油腻感或油光发亮吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "湿热质"
+  },
+  {
+    "id": 41,
+    "question": "您容易生痤疮或疮疖吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "湿热质"
+  },
+  {
+    "id": 42,
+    "question": "您感到口苦或嘴里有异味吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "湿热质"
+  },
+  {
+    "id": 43,
+    "question": "您大便粘滞不爽、有解不尽的感觉吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "湿热质"
+  },
+  {
+    "id": 44,
+    "question": "您小便时尿道有发热感、尿色浓(深)吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "湿热质"
+  },
+  {
+    "id": 45,
+    "question": "您带下色黄吗？（女性）",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "湿热质"
+  },
+  {
+    "id": 46,
+    "question": "您阴囊部位潮湿吗？（男性）",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "湿热质"
+  },
+  {
+    "id": 47,
+    "question": "您的皮肤会不知不觉中出现青紫瘀斑吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "血瘀质"
+  },
+  {
+    "id": 48,
+    "question": "您面额部有细微红丝吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "血瘀质"
+  },
+  {
+    "id": 49,
+    "question": "您身体上有哪里疼痛吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "血瘀质"
+  },
+  {
+    "id": 50,
+    "question": "您面部晦暗或容易出现褐斑吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "血瘀质"
+  },
+  {
+    "id": 51,
+    "question": "您容易有黑眼圈吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "血瘀质"
+  },
+  {
+    "id": 52,
+    "question": "您容易忘事吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "血瘀质"
+  },
+  {
+    "id": 53,
+    "question": "您口唇颜色偏黯吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "血瘀质"
+  },
+  {
+    "id": 54,
+    "question": "您感到闷闷不乐、情绪低沉吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气郁质"
+  },
+  {
+    "id": 55,
+    "question": "您容易神经紧张、焦虑不安吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气郁质"
+  },
+  {
+    "id": 56,
+    "question": "您多愁善感、感情脆弱吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气郁质"
+  },
+  {
+    "id": 57,
+    "question": "您容易感到害怕或受到惊吓吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气郁质"
+  },
+  {
+    "id": 58,
+    "question": "您胁肋部或乳房胀痛吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气郁质"
+  },
+  {
+    "id": 59,
+    "question": "您无缘无故叹气吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气郁质"
+  },
+  {
+    "id": 60,
+    "question": "您咽喉部有异物感、且吐之不出、咽之不下吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "气郁质"
+  },
+  {
+    "id": 61,
+    "question": "您没有感冒时也会打喷嚏吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "特禀质"
+  },
+  {
+    "id": 62,
+    "question": "您没有感冒也会鼻塞、流鼻涕吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "特禀质"
+  },
+  {
+    "id": 63,
+    "question": "您有因季节变化、温度变化或异味而咳喘吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "特禀质"
+  },
+  {
+    "id": 64,
+    "question": "您容易（对药物、食物、气味、花粉或在季节交替、气候变化时）过敏吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "特禀质"
+  },
+  {
+    "id": 65,
+    "question": "您的皮肤容易起荨麻疹（风团、风疹块、风疙瘩）吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "特禀质"
+  },
+  {
+    "id": 66,
+    "question": "您的皮肤因过敏出现过紫癜（紫红色瘀斑）吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "特禀质"
+  },
+  {
+    "id": 67,
+    "question": "您的皮肤一抓就红，并出现划痕吗？",
+    "options": [
+      {
+        "text": "根本不",
+        "score": 1
+      },
+      {
+        "text": "有一点",
+        "score": 2
+      },
+      {
+        "text": "有些",
+        "score": 3
+      },
+      {
+        "text": "相当",
+        "score": 4
+      },
+      {
+        "text": "非常",
+        "score": 5
+      }
+    ],
+    "dimension": "特禀质"
+  }
+]

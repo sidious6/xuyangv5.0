@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { ArrowLeft, Clock, MapPin, Calendar, BookOpen, Heart, Activity, Utensils, Moon, TrendingUp, Send, Share2, MessageCircle } from 'lucide-react';
+import { ArrowLeft, Clock, MapPin, Calendar, BookOpen, Heart, Activity, Utensils, Moon, TrendingUp, Send, Share2, MessageCircle, User } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import FiveElementsRelation from '@/components/FiveElementsRelation';
@@ -50,6 +50,17 @@ export default function ShunshiPage() {
     basic: { wood: 20, fire: 20, earth: 20, metal: 20, water: 20 },
     dynamic: { wood: 20, fire: 20, earth: 20, metal: 20, water: 20 }
   });
+  const [userFiveElementsRatio, setUserFiveElementsRatio] = useState<{
+    木: number;
+    火: number;
+    土: number;
+    金: number;
+    水: number;
+  } | null>(null);
+  const [userDayMaster, setUserDayMaster] = useState<{
+    dayMaster: string;        // 日干，如："甲"
+    dayMasterElement: string; // 日干五行，如："wood"
+  } | null>(null);
   const [selectedElement, setSelectedElement] = useState<'wood' | 'fire' | 'earth' | 'metal' | 'water' | null>(null);
   const [elementsAdvice, setElementsAdvice] = useState<FiveElementsAdvice | null>(null);
   const [activeTab, setActiveTab] = useState<'advice' | 'elements'>('advice');
@@ -62,6 +73,20 @@ export default function ShunshiPage() {
     '这个节气我需要注意什么？'
   ]);
   const [isGeneratingPresetQuestions, setIsGeneratingPresetQuestions] = useState(false);
+
+  // 根据当前标签页获取预设问题
+  const getCurrentPresetQuestions = () => {
+    if (activeTab === 'elements') {
+      // 五行分析标签页的预设问题
+      return [
+        '五行的"相生相克"在调理身体时是如何应用的？',
+        '五行和我们常说的五脏（心、肝、脾、肺、肾）是怎么对应的？'
+      ];
+    } else {
+      // 养生建议标签页的预设问题
+      return presetQuestions;
+    }
+  };
 
   // 获取顺时详情
   const fetchShunshiDetail = async () => {
@@ -88,6 +113,32 @@ export default function ShunshiPage() {
         if (wellnessResult.success && wellnessResult.data?.content) {
           setShunshiContent(wellnessResult.data.content);
         }
+      }
+
+      // 获取用户的五行比例和日干信息
+      const { data: profile, error: profileError } = await supabase
+        .from('profiles')
+        .select('five_elements_ratio, day_master, day_master_element')
+        .eq('id', user.id)
+        .single();
+
+      if (profile?.five_elements_ratio && !profileError) {
+        setUserFiveElementsRatio(profile.five_elements_ratio);
+        console.log('获取到用户五行比例:', profile.five_elements_ratio);
+        
+        // 保存日干信息
+        if (profile.day_master && profile.day_master_element) {
+          setUserDayMaster({
+            dayMaster: profile.day_master,
+            dayMasterElement: profile.day_master_element
+          });
+          console.log('获取到用户日干信息:', {
+            dayMaster: profile.day_master,
+            dayMasterElement: profile.day_master_element
+          });
+        }
+      } else {
+        console.log('用户暂无五行比例数据');
       }
 
       // 获取前一日总结
@@ -484,19 +535,75 @@ export default function ShunshiPage() {
 
             {/* 五行相克关系 */}
             <div className="bg-white rounded-xl shadow-sm p-4">
-              <h3 className="text-lg font-medium text-gray-900 mb-4">五行相克关系</h3>
+              <h3 className="text-lg font-medium text-gray-900 mb-4">
+                {userFiveElementsRatio ? '您的五行比例分析' : '五行相克关系'}
+              </h3>
+              
+              {/* 日干五行属性显示 */}
+              {userDayMaster && (
+                <div className="mb-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-3">
+                  <div className="flex items-center justify-center gap-3">
+                    <div className="text-sm text-gray-600">您的五行属性：</div>
+                    <div className="flex items-center gap-2">
+                      <div className={`w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-bold ${
+                        userDayMaster.dayMasterElement === 'wood' ? 'bg-green-500' :
+                        userDayMaster.dayMasterElement === 'fire' ? 'bg-red-500' :
+                        userDayMaster.dayMasterElement === 'earth' ? 'bg-yellow-600' :
+                        userDayMaster.dayMasterElement === 'metal' ? 'bg-gray-400' :
+                        userDayMaster.dayMasterElement === 'water' ? 'bg-blue-500' : 'bg-gray-400'
+                      }`}>
+                        {userDayMaster.dayMaster}
+                      </div>
+                      <span className="font-medium text-gray-800">
+                        {userDayMaster.dayMaster}{
+                          userDayMaster.dayMasterElement === 'wood' ? '木' :
+                          userDayMaster.dayMasterElement === 'fire' ? '火' :
+                          userDayMaster.dayMasterElement === 'earth' ? '土' :
+                          userDayMaster.dayMasterElement === 'metal' ? '金' :
+                          userDayMaster.dayMasterElement === 'water' ? '水' : ''
+                        }命
+                      </span>
+                    </div>
+                    <div className="text-xs text-gray-500">
+                      (日干决定您的先天五行属性)
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div className="flex justify-center">
-                <FiveElementsRelation onElementClick={handleElementClick} size={280} />
+                <FiveElementsRelation 
+                  onElementClick={handleElementClick} 
+                  size={280}
+                  fiveElementsRatio={userFiveElementsRatio || undefined}
+                  userDayMasterElement={userDayMaster?.dayMasterElement}
+                />
               </div>
+              {userFiveElementsRatio && (
+                <div className="mt-4 text-center">
+                  <p className="text-sm text-gray-600">
+                    点击任意元素查看详细调理建议
+                  </p>
+                </div>
+              )}
             </div>
 
             {/* 选中元素的调理建议 */}
             {selectedElement && elementsAdvice && (
               <div className="bg-white rounded-xl shadow-sm p-4">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-medium text-gray-900">
-                    {elementsAdvice.element_name}行调理建议
-                  </h3>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-medium text-gray-900">
+                      {elementsAdvice.element_name}行调理建议
+                    </h3>
+                    {/* 本命五行特殊标识 */}
+                    {userDayMaster && selectedElement === userDayMaster.dayMasterElement && (
+                      <div className="flex items-center gap-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-2 py-1 rounded-full text-xs font-bold">
+                        <span>👑</span>
+                        <span>您的本命五行</span>
+                      </div>
+                    )}
+                  </div>
                   <button
                     onClick={() => setSelectedElement(null)}
                     className="text-gray-400 hover:text-gray-600"
@@ -506,11 +613,11 @@ export default function ShunshiPage() {
                 </div>
 
                 <div className="space-y-4">
-                  {/* 饮食建议 */}
+                  {/* 体质特征 */}
                   <div>
                     <h4 className="font-medium text-gray-900 mb-2 flex items-center">
-                      <Utensils className="w-4 h-4 mr-2 text-green-600" />
-                      饮食建议
+                      <User className="w-4 h-4 mr-2 text-green-600" />
+                      体质特征
                     </h4>
                     <ul className="space-y-1 text-sm text-gray-700">
                       {elementsAdvice.advice_categories.diet.map((item, index) => (
@@ -522,11 +629,11 @@ export default function ShunshiPage() {
                     </ul>
                   </div>
 
-                  {/* 运动建议 */}
+                  {/* 平衡状态 */}
                   <div>
                     <h4 className="font-medium text-gray-900 mb-2 flex items-center">
                       <Activity className="w-4 h-4 mr-2 text-blue-600" />
-                      运动建议
+                      平衡状态
                     </h4>
                     <ul className="space-y-1 text-sm text-gray-700">
                       {elementsAdvice.advice_categories.exercise.map((item, index) => (
@@ -538,16 +645,16 @@ export default function ShunshiPage() {
                     </ul>
                   </div>
 
-                  {/* 生活建议 */}
+                  {/* 失衡信号 */}
                   <div>
                     <h4 className="font-medium text-gray-900 mb-2 flex items-center">
-                      <Calendar className="w-4 h-4 mr-2 text-purple-600" />
-                      生活建议
+                      <Heart className="w-4 h-4 mr-2 text-red-600" />
+                      失衡信号
                     </h4>
                     <ul className="space-y-1 text-sm text-gray-700">
                       {elementsAdvice.advice_categories.lifestyle.map((item, index) => (
                         <li key={index} className="flex items-start gap-2">
-                          <span className="text-purple-600 mt-1">•</span>
+                          <span className="text-red-600 mt-1">•</span>
                           {item}
                         </li>
                       ))}
@@ -593,9 +700,9 @@ export default function ShunshiPage() {
             {/* 预设问题按钮 */}
             <div className="mb-2">
               <div className="flex gap-2 overflow-x-auto pb-1">
-                {presetQuestions.map((question, index) => (
+                {getCurrentPresetQuestions().map((question, index) => (
                   <button
-                    key={index}
+                    key={`${activeTab}-${index}`}
                     onClick={() => handlePresetQuestionClick(question)}
                     className="px-3 py-2 text-sm bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors whitespace-nowrap flex-shrink-0"
                   >

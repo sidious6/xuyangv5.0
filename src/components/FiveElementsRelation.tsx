@@ -6,9 +6,17 @@ import { FIVE_ELEMENTS_RELATIONS } from '@/types/five-elements';
 interface FiveElementsRelationProps {
   onElementClick?: (element: 'wood' | 'fire' | 'earth' | 'metal' | 'water') => void;
   size?: number;
+  fiveElementsRatio?: {
+    木: number;
+    火: number;
+    土: number;
+    金: number;
+    水: number;
+  };
+  userDayMasterElement?: string; // 用户的日干五行属性
 }
 
-export default function FiveElementsRelation({ onElementClick, size = 320 }: FiveElementsRelationProps) {
+export default function FiveElementsRelation({ onElementClick, size = 320, fiveElementsRatio, userDayMasterElement }: FiveElementsRelationProps) {
   const [hoveredElement, setHoveredElement] = useState<string | null>(null);
   const [clickedElement, setClickedElement] = useState<string | null>(null);
   const [selectedElement, setSelectedElement] = useState<string | null>(null);
@@ -45,6 +53,21 @@ export default function FiveElementsRelation({ onElementClick, size = 320 }: Fiv
 
   const elements = ['wood', 'fire', 'earth', 'metal', 'water'] as const;
   const positions = elements.map((_, index) => getElementPosition(index));
+
+  // 获取元素的比例值
+  const getElementRatio = (element: string): number => {
+    if (!fiveElementsRatio) return 0;
+    const elementMap = {
+      'wood': '木',
+      'fire': '火', 
+      'earth': '土',
+      'metal': '金',
+      'water': '水'
+    } as const;
+    
+    const chineseName = elementMap[element as keyof typeof elementMap];
+    return fiveElementsRatio[chineseName] || 0;
+  };
 
   // 获取五行元素的显示信息
   const getElementInfo = (element: string) => {
@@ -244,6 +267,8 @@ export default function FiveElementsRelation({ onElementClick, size = 320 }: Fiv
           const position = positions[index];
           const relation = getElementInfo(element);
           const isClicked = clickedElement === element;
+          const ratio = getElementRatio(element);
+          const maxRatio = fiveElementsRatio ? Math.max(...Object.values(fiveElementsRatio)) : 100;
 
           const handleElementClick = () => {
             setClickedElement(element);
@@ -251,6 +276,10 @@ export default function FiveElementsRelation({ onElementClick, size = 320 }: Fiv
             setTimeout(() => setClickedElement(null), 10000); // 动画持续时间10秒
             onElementClick?.(element);
           };
+
+          // 计算填充高度（基于比例）
+          const fillHeight = ratio > 0 ? (ratio / maxRatio) * 56 : 0; // 56是直径
+          const fillY = position.y + 28 - fillHeight; // 从底部开始填充
 
           return (
             <g key={`circle-${element}`}>
@@ -262,7 +291,7 @@ export default function FiveElementsRelation({ onElementClick, size = 320 }: Fiv
                     cy={position.y}
                     r="28"
                     fill="none"
-                    stroke={relation?.color || '#6b7280'}
+                    stroke={element === 'metal' ? '#f59e0b' : relation?.color || '#6b7280'}
                     strokeWidth="3"
                     opacity="0.6"
                     className="ripple-animation"
@@ -272,7 +301,7 @@ export default function FiveElementsRelation({ onElementClick, size = 320 }: Fiv
                     cy={position.y}
                     r="28"
                     fill="none"
-                    stroke={relation?.color || '#6b7280'}
+                    stroke={element === 'metal' ? '#f59e0b' : relation?.color || '#6b7280'}
                     strokeWidth="2"
                     opacity="0.4"
                     className="ripple-animation-delay-1"
@@ -282,7 +311,7 @@ export default function FiveElementsRelation({ onElementClick, size = 320 }: Fiv
                     cy={position.y}
                     r="28"
                     fill="none"
-                    stroke={relation?.color || '#6b7280'}
+                    stroke={element === 'metal' ? '#f59e0b' : relation?.color || '#6b7280'}
                     strokeWidth="1"
                     opacity="0.2"
                     className="ripple-animation-delay-2"
@@ -297,20 +326,65 @@ export default function FiveElementsRelation({ onElementClick, size = 320 }: Fiv
                   cy={position.y}
                   r="32"
                   fill="none"
-                  stroke={relation?.color || '#6b7280'}
+                  stroke={element === 'metal' ? '#f59e0b' : relation?.color || '#6b7280'}
                   strokeWidth="3"
                   opacity="0.8"
                   className="animate-pulse"
                 />
               )}
+
+              {/* 定义裁剪路径用于圆形填充 */}
+              <defs>
+                <clipPath id={`clip-${element}-${index}`}>
+                  <circle cx={position.x} cy={position.y} r="25" />
+                </clipPath>
+              </defs>
               
-              {/* 主圆圈 */}
+              {/* 背景圆圈（空的部分） */}
               <circle
                 cx={position.x}
                 cy={position.y}
                 r="28"
-                fill={relation?.color || '#6b7280'}
-                stroke={element === 'metal' ? '#374151' : '#ffffff'}
+                fill="#f3f4f6"
+                stroke={element === 'metal' ? '#f59e0b' : '#ffffff'}
+                strokeWidth="3"
+                className="cursor-pointer transition-all duration-300"
+                onClick={handleElementClick}
+                filter="drop-shadow(2px 2px 4px rgba(0,0,0,0.2))"
+                opacity={selectedElement && selectedElement !== element ? "0.6" : "1"}
+              />
+
+              {/* 比例填充部分 */}
+              {ratio > 0 && (
+                <rect
+                  x={position.x - 25}
+                  y={fillY}
+                  width="50"
+                  height={fillHeight}
+                  fill={
+                    element === 'metal' ? '#fbbf24' : // 金元素使用黄色
+                    element === 'earth' ? '#92400e' : // 土元素使用棕色
+                    element === 'water' ? '#6b7280' : // 水元素使用较浅的灰色
+                    relation?.color || '#6b7280'
+                  }
+                  clipPath={`url(#clip-${element}-${index})`}
+                  className="cursor-pointer transition-all duration-500"
+                  onClick={handleElementClick}
+                  opacity={
+                    selectedElement && selectedElement !== element ? "0.6" : 
+                    element === 'water' ? "0.7" : // 水元素更透明
+                    "0.9"
+                  }
+                />
+              )}
+
+              {/* 外圈边框 */}
+              <circle
+                cx={position.x}
+                cy={position.y}
+                r="28"
+                fill="none"
+                stroke={element === 'metal' ? '#f59e0b' : '#ffffff'}
                 strokeWidth="3"
                 className="cursor-pointer transition-all duration-300"
                 onClick={handleElementClick}
@@ -321,30 +395,87 @@ export default function FiveElementsRelation({ onElementClick, size = 320 }: Fiv
               {/* 元素文字 */}
               <text
                 x={position.x}
-                y={position.y - 2}
+                y={position.y - 6}
                 textAnchor="middle"
                 dominantBaseline="middle"
-                className={`text-lg font-bold cursor-pointer select-none transition-all duration-300 ${
-                  element === 'metal' ? 'fill-gray-800' : 'fill-white'
+                className={`text-sm font-bold cursor-pointer select-none transition-all duration-300 ${
+                  element === 'metal' ? 'fill-gray-800' : 'fill-gray-800'
                 }`}
                 onClick={handleElementClick}
-                filter="drop-shadow(1px 1px 2px rgba(0,0,0,0.3))"
+                filter="drop-shadow(1px 1px 2px rgba(255,255,255,0.8))"
                 opacity={selectedElement && selectedElement !== element ? "0.6" : "1"}
               >
                 {relation?.name}
               </text>
+
+              {/* 比例数字 */}
+              {fiveElementsRatio && (
+                <text
+                  x={position.x}
+                  y={position.y + 6}
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  className={`text-xs font-semibold cursor-pointer select-none transition-all duration-300 ${
+                    element === 'metal' ? 'fill-gray-800' : 'fill-gray-800'
+                  }`}
+                  onClick={handleElementClick}
+                  filter="drop-shadow(1px 1px 2px rgba(255,255,255,0.8))"
+                  opacity={selectedElement && selectedElement !== element ? "0.6" : "1"}
+                >
+                  {ratio.toFixed(1)}%
+                </text>
+              )}
               
               {/* 器官图标 - 在球内底部 */}
               <foreignObject
                 x={position.x - 6}
-                y={position.y + 8}
+                y={position.y + 14}
                 width="12"
                 height="12"
                 className="pointer-events-none"
-                opacity={selectedElement && selectedElement !== element ? "0.6" : "1"}
+                opacity={selectedElement && selectedElement !== element ? "0.6" : "0.7"}
               >
                 {getOrganIcon(element)}
               </foreignObject>
+
+              {/* 日干五行属性标识 - 皇冠图标 */}
+              {userDayMasterElement === element && (
+                <g>
+                  {/* 皇冠背景圆圈 */}
+                  <circle
+                    cx={position.x}
+                    cy={position.y - 35}
+                    r="10"
+                    fill="#fbbf24"
+                    stroke="#f59e0b"
+                    strokeWidth="2"
+                    className="animate-pulse"
+                  />
+                  {/* 皇冠图标 */}
+                  <foreignObject
+                    x={position.x - 6}
+                    y={position.y - 41}
+                    width="12"
+                    height="12"
+                    className="pointer-events-none"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 16L3 7l5.5 5L12 4l3.5 8L21 7l-2 9H5z" fill="white" stroke="none"/>
+                    </svg>
+                  </foreignObject>
+                  {/* 标签文字 */}
+                  <text
+                    x={position.x}
+                    y={position.y - 50}
+                    textAnchor="middle"
+                    dominantBaseline="middle"
+                    className="text-xs font-bold fill-yellow-600"
+                    filter="drop-shadow(1px 1px 2px rgba(255,255,255,0.8))"
+                  >
+                    本命
+                  </text>
+                </g>
+              )}
             </g>
           );
         })}

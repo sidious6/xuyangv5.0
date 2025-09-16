@@ -1,6 +1,6 @@
 'use client';
 
-import { Menu, ChevronRight, Plus, Utensils, Heart, Moon, Stethoscope, Camera, Mic, X, Edit3, Save, ArrowLeft, Activity, Calendar, FileText, HelpCircle, Trash2 } from "lucide-react";
+import { Menu, ChevronRight, Plus, Utensils, Heart, Moon, Stethoscope, Camera, Mic, X, Edit3, Save, ArrowLeft, Activity, Calendar, FileText, HelpCircle } from "lucide-react";
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, useEffect, useRef } from 'react';
@@ -1021,11 +1021,12 @@ export default function Home() {
         constitution: profile?.constitution
       });
 
-      // 如果都没有完成，跳转到引导页面
-      if (!hasBirthInfo && !hasConstitution) {
-        router.push('/auth/onboarding');
-        return;
-      }
+      // 移除自动跳转逻辑，让用户主动选择完善信息
+      // 如果都没有完成，在主页显示提示卡片，引导用户主动完善
+      // if (!hasBirthInfo && !hasConstitution) {
+      //   router.push('/auth/onboarding');
+      //   return;
+      // }
     } catch (error) {
       console.error('Error checking user completion status:', error);
       setUserCompletionStatus(prev => ({ ...prev, loading: false }));
@@ -1048,11 +1049,11 @@ export default function Home() {
 
       const hasCompletedOnboarding = profile?.birth_year && profile?.constitution;
 
-      // 如果没有完成引导，跳转到引导页面
-      if (!hasCompletedOnboarding) {
-        router.push('/auth/onboarding');
-        return;
-      }
+      // 移除强制跳转逻辑，让用户主动选择完善信息
+      // if (!hasCompletedOnboarding) {
+      //   router.push('/auth/onboarding');
+      //   return;
+      // }
 
       // 检查用户是否有任何记录
       const { data: { session } } = await supabase.auth.getSession();
@@ -1755,8 +1756,8 @@ export default function Home() {
                 </svg>
               </div>
               <div className="min-w-0">
-                <h2 className="text-base font-medium text-gray-900">基于中医智慧</h2>
-                <p className="text-sm text-gray-600 whitespace-nowrap overflow-hidden text-ellipsis">小煦为您揭秘中医智慧</p>
+                <h2 className="text-base font-medium text-gray-900">解密你的中医体质</h2>
+                <p className="text-sm text-gray-600 whitespace-nowrap overflow-hidden text-ellipsis">小煦为你提供专属建议</p>
               </div>
             </div>
             <Link
@@ -2576,15 +2577,19 @@ export default function Home() {
             {/* 主要功能按钮 */}
             <div className="p-4 space-y-3">
               <button
-                onClick={() => router.push('/constitution-reports')}
+                onClick={() => {
+                  // 检查用户是否已有体质测试结果
+                  if (userCompletionStatus.hasConstitution) {
+                    router.push('/constitution-reports');
+                  } else {
+                    // 如果没有体质测试结果，跳转到选择测试版本
+                    router.push('/auth/onboarding?step=2');
+                  }
+                }}
                 className="w-full bg-green-500 text-white py-3 rounded-lg font-medium hover:bg-green-600 transition-colors flex items-center justify-center gap-2"
               >
                 <FileText className="w-4 h-4" />
                 体质报告
-              </button>
-              <button className="w-full bg-gray-700 text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors flex items-center justify-center gap-2">
-                <Activity className="w-4 h-4" />
-                历史健康状况
               </button>
             </div>
 
@@ -2592,10 +2597,6 @@ export default function Home() {
             <div className="p-4">
               <h4 className="text-sm text-gray-500 mb-3">全部功能</h4>
               <div className="space-y-2">
-                <button className="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
-                  <Trash2 className="w-4 h-4 text-gray-600" />
-                  <span className="text-sm text-gray-700">回收站</span>
-                </button>
                 <button className="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors">
                   <HelpCircle className="w-4 h-4 text-gray-600" />
                   <span className="text-sm text-gray-700">帮助中心</span>
